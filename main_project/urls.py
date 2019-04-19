@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path, include
 from django.contrib import admin
-from first_app import views
+from my_app import views
+from django.conf.urls.static import static, settings
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    url(r'^admin/', admin.site.urls),
-    path('first_app', include('first_app.urls'))
-]
+    path('', views.IndexView.as_view(), name='index'),
+    path('my_app/', include('my_app.urls')),
+    path('admin/', admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

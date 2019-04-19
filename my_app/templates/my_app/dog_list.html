@@ -1,0 +1,39 @@
+{% extends "my_app/base.html" %}
+
+{% block body_block %}
+
+
+{% load static %}
+
+<div class="container row" style="padding-top: 5%;">
+
+    {% for dog in dogs %}
+
+
+
+     <div class="card col-md-4 px-0" style="width: 18rem;">
+         {% if dog.dog_logo %}
+      <img class="card-img-top" src="{{ dog.dog_logo.url }}" alt="Card image cap">
+
+         {% else %}
+      <img class="card-img-top" src="{% static 'my_app/unknown.png' %}" alt="Card image cap">
+         {% endif %}
+
+      <div class="card-body">
+        <h5 class="card-title">{{dog.name}}</h5>
+        <p class="card-text">{{dog.breed}}</p>
+        <a href="#" class="btn btn-primary">My Story</a>
+      </div>
+    </div>
+
+
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+{% endblock %}

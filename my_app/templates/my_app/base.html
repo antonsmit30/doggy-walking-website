@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <!--<div class="navbar-nav">-->
+      <!--<a class="nav-item navbar-brand" href="{% url 'index' %}">Home</a>-->
+      <!--<a class="nav-item" href="#">Shelters</a>-->
+      <!--<a class="nav-item" href="#">Doggies</a>-->
+    <!--</div>-->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="navbar-brand" href="{% url 'my_app:shelters' %}">Shelters</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="navbar-brand" href="{% url 'my_app:dogs' %}">Doggies</a>
+        </li>
+
+
+    </ul>
+</nav>
+
+<div class="container">
+ {% block body_block %}
+
+ {% endblock %}
+</div>
+
+
+
+
+</body>
+</html>
